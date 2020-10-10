@@ -1,0 +1,55 @@
+임의의 값이 채워진 배열 np.empty((3,2))
+0으로 채워진 배열 np.zeros((3,2))
+1로 채운 배열 np.ones((3,2))
+특정 값으로 채운 배열 np.zeros((3,2)) + 7 또는 np.full((3,2),7)
+
+
+CSR행렬로 0이 아닌 애들 index 저장 sparse.csr_matrix(a)
+matrix_sparse_2 =
+sparse.crs_matrix(([1,3],([1,2],[1,0]))), shape =(3,10)) => 1은 1번째행1번째열에 3은 2번째행0번째열에 넣음
+밀집 배열로 변환 matrix_spares_2.toarray()
+matrix객체 반환 matrix_sparse_2.todense()
+
+첫번째행, 세번째행 matrix[[0,2]]
+(0,1),(2,0) 위치 matrix[[0,2],[1,0]]
+블리언 마스크 배열로 true,false 판단 가능 mask = matrix > 5
+ 
+모양 a.shape
+크기 a.size
+차원 a.ndim
+데이터타입 a.dtype
+원소하나의 바이트 a.itemsize
+배열 전체의 바이트 a.nbytes
+
+np.max(a,axis=1,keepdims=True) #axis=0 열, keepdims : 원본 배열과 차원 같음
+편향되지 않은 추정값 np.std(a,ddof=1)
+배열크기 a.reshape = a.reshape(12)=(1,-1)=(-1)=ravel()
+전치 행렬 T or transpose a.transpose((0,2,1)) : 두번재와 세번째 차원을 바꾸기
+
+행렬펼치기 a.flatten() = a.reshape(-1)
+행렬 랭크 np.linalg.matrix_rank(a)
+svd 계산 s =np.linalg.svd(a,compute_uv=False) 오차 고려 0에 가까운 값 지정 np.sum(s>1e-10)
+행렬식 np.linalg.det(a)
+대각원소 a.diagonal() 주대각선 하나 위 offset=1 옵션, 주대각선 하나 아래 offset=-1
+또는b = np.diag(a)
+1차원 배열이 주어졌을때 2차원 대각행렬을 만듬 np.diag(b)
+대각합 a.trace()
+고윳값 고유벡터 eigenvalues, eigenvectors = np.linalg.eig(matrix) 대칭행렬일때 np.linalg.eigh(matrix)
+
+점곱 np.dot(a,b) 또는a * b 또는 a @ b #스칼라 배열은 @ 불가
+역행렬b = np.linalg.inv(a)
+a * b = 단위행렬
+정방행렬 아닐때 역행렬 np.linalg.pinv(a)
+ 
+초기값 지정 np.random.seed(0)
+np.ramdom.randint(0,50,(3,2))
+np.random.normal
+np.random.logistic
+np.random.uniform(0.0,1.0,(2,3)) = np.random.random((2,3)) = np.random.sample((2,3))
+np.random.choice([0,1,2],5)
+
+원본 데이터가 섞임np.random.shuffle(a)
+원본 데이터 유지 np.random.permutation(a)
+
+직교행렬 : transpose가 역행렬이 되는 행렬
+
