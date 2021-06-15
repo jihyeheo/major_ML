@@ -7,3 +7,5 @@
 
 ## Time : 월 14:00~16:00, 수 15:00~16:00
 
+
+## Graduate of machine learning (20210302 ~ 20210317)
